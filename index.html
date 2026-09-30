@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A quick guide to saltwater fishing on Long Island: target species, seasons, North and South Shore spots, beginner tips, and license reminders.">
+  <title>Long Island Saltwater Fishing</title>
+  <style>
+    :root {
+      --deep: #0b2545;
+      --navy: #13315c;
+      --ocean: #1b5e8c;
+      --teal: #1f9aa8;
+      --foam: #e8f4f6;
+      --sand: #f6f1e7;
+      --white: #ffffff;
+      --text: #1d2b3a;
+      --muted: #5a6b7c;
+      --radius: 14px;
+      --shadow: 0 6px 20px rgba(11, 37, 69, 0.10);
+      --max: 1100px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: var(--text);
+      background: var(--foam);
+      line-height: 1.6;
+    }
+
+    a { color: var(--ocean); }
+
+    .container {
+      width: 100%;
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ---------- Nav ---------- */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(11, 37, 69, 0.95);
+      backdrop-filter: blur(6px);
+    }
+    nav .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding-top: 12px;
+      padding-bottom: 12px;
+    }
+    .brand {
+      color: var(--white);
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 18px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    nav ul::-webkit-scrollbar { display: none; }
+    nav a.link {
+      color: #cfe3ef;
+      text-decoration: none;
+      font-size: 0.95rem;
+      white-space: nowrap;
+    }
+    nav a.link:hover { color: var(--white); }
+
+    /* ---------- Header / hero ---------- */
+    header.hero {
+      position: relative;
+      color: var(--white);
+      background: linear-gradient(160deg, var(--deep) 0%, var(--ocean) 55%, var(--teal) 100%);
+      padding: 88px 0 120px;
+      text-align: center;
+      overflow: hidden;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 6vw, 3.4rem);
+      line-height: 1.15;
+      margin-bottom: 14px;
+      letter-spacing: -0.5px;
+    }
+    .hero p {
+      font-size: clamp(1rem, 2.6vw, 1.2rem);
+      max-width: 640px;
+      margin: 0 auto 28px;
+      color: #d9ecf4;
+    }
+    .btn {
+      display: inline-block;
+      background: var(--white);
+      color: var(--deep);
+      font-weight: 600;
+      padding: 12px 24px;
+      border-radius: 999px;
+      text-decoration: none;
+      box-shadow: var(--shadow);
+      transition: transform 0.15s ease;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .wave {
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 100%;
+      height: 70px;
+      display: block;
+    }
+
+    /* ---------- Sections ---------- */
+    section { padding: 64px 0; }
+    section.alt { background: var(--white); }
+    .section-title {
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      color: var(--deep);
+      margin-bottom: 8px;
+    }
+    .section-sub {
+      color: var(--muted);
+      margin-bottom: 32px;
+      max-width: 680px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    }
+
+    .card {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 22px;
+      border-top: 5px solid var(--teal);
+    }
+    section.alt .card { background: var(--foam); box-shadow: none; }
+    .card h3 { color: var(--navy); margin-bottom: 6px; font-size: 1.2rem; }
+    .card p { color: var(--muted); font-size: 0.97rem; }
+
+    .season {
+      display: inline-block;
+      background: var(--deep);
+      color: var(--white);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+    .aka { font-size: 0.85rem; color: var(--teal); font-weight: 600; margin-bottom: 6px; }
+
+    /* ---------- Spots ---------- */
+    .shores {
+      display: grid;
+      gap: 24px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+    .shore {
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--foam);
+    }
+    .shore-head {
+      padding: 18px 22px;
+      color: var(--white);
+      background: linear-gradient(120deg, var(--navy), var(--ocean));
+    }
+    .shore.south .shore-head { background: linear-gradient(120deg, var(--ocean), var(--teal)); }
+    .shore-head h3 { font-size: 1.3rem; }
+    .shore-head p { font-size: 0.9rem; color: #d9ecf4; }
+    .shore ul { list-style: none; padding: 8px 22px 18px; }
+    .shore li {
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(27, 94, 140, 0.15);
+    }
+    .shore li:last-child { border-bottom: none; }
+    .shore li strong { color: var(--deep); display: block; }
+    .shore li span { color: var(--muted); font-size: 0.93rem; }
+
+    /* ---------- Tips ---------- */
+    .tips {
+      list-style: none;
+      display: grid;
+      gap: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      counter-reset: tip;
+    }
+    .tips li {
+      position: relative;
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 20px 20px 20px 64px;
+      counter-increment: tip;
+    }
+    .tips li::before {
+      content: counter(tip);
+      position: absolute;
+      left: 18px;
+      top: 18px;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--teal);
+      color: var(--white);
+      font-weight: 700;
+      display: grid;
+      place-items: center;
+    }
+    .tips strong { color: var(--deep); }
+
+    /* ---------- Regulations ---------- */
+    .notice {
+      background: var(--sand);
+      border-left: 6px solid var(--ocean);
+      border-radius: var(--radius);
+      padding: 26px;
+    }
+    .notice ul { margin: 14px 0 20px 20px; }
+    .notice li { margin-bottom: 8px; }
+    .notice .btn { background: var(--ocean); color: var(--white); }
+
+    /* ---------- Footer ---------- */
+    footer {
+      background: var(--deep);
+      color: #9fb8cc;
+      text-align: center;
+      padding: 28px 0;
+      font-size: 0.9rem;
+    }
+
+    /* ---------- Small screens ---------- */
+    @media (max-width: 600px) {
+      .brand { display: none; }
+      nav ul { gap: 16px; }
+      header.hero { padding: 64px 0 100px; }
+      section { padding: 48px 0; }
+      .container { padding: 0 16px; }
+      .shores { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav aria-label="Main">
+    <div class="container">
+      <a class="brand" href="#top">LI Saltwater</a>
+      <ul>
+        <li><a class="link" href="#fish">Fish</a></li>
+        <li><a class="link" href="#spots">Spots</a></li>
+        <li><a class="link" href="#tips">Tips</a></li>
+        <li><a class="link" href="#regs">Regulations</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="container">
+      <h1>Saltwater Fishing on Long Island</h1>
+      <p>What to target, when to go, and where to cast, from the Sound to the South Shore inlets.</p>
+      <a class="btn" href="#fish">Start exploring</a>
+    </div>
+    <svg class="wave" viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true">
+      <path fill="#e8f4f6" d="M0,40 C240,80 480,0 720,30 C960,60 1200,10 1440,35 L1440,70 L0,70 Z"></path>
+    </svg>
+  </header>
+
+  <main>
+    <!-- Fish -->
+    <section id="fish">
+      <div class="container">
+        <h2 class="section-title">The Main Catches</h2>
+        <p class="section-sub">Five species make up most of what Long Islanders catch. Seasons below are the typical best windows. Open harvest seasons are set by the DEC and can be narrower, so check the current rules before you keep anything.</p>
+
+        <div class="grid">
+          <article class="card">
+            <span class="season">Best: May–June &amp; Oct–Nov</span>
+            <h3>Striped Bass</h3>
+            <p class="aka">"Stripers"</p>
+            <p>The prize fish of Long Island. Big spring and fall migrations bring them close to beaches, jetties and inlets. Dawn, dusk and night tides are usually most productive.</p>
+          </article>
+
+          <article class="card">
+            <span class="season">Best: June–October</span>
+            <h3>Bluefish</h3>
+            <p class="aka">"Blues" / "Snappers" when small</p>
+            <p>Aggressive and hard-fighting, often chasing bait on the surface. Use a wire or heavy leader because their teeth cut through light line.</p>
+          </article>
+
+          <article class="card">
+            <span class="season">Best: May–September</span>
+            <h3>Fluke</h3>
+            <p class="aka">Summer flounder</p>
+            <p>Flatfish that lie on sandy bottoms and ambush bait. Drift over sand with a bucktail and squid strip or live killies. Popular in the bays and off the South Shore.</p>
+          </article>
+
+          <article class="card">
+            <span class="season">Best: June–October</span>
+            <h3>Porgy</h3>
+            <p class="aka">Scup</p>
+            <p>Plentiful, easy to catch, and good to eat. A great beginner fish. Small hooks baited with clam or squid on rocky or hard bottom, especially in Long Island Sound.</p>
+          </article>
+
+          <article class="card">
+            <span class="season">Best: October–December</span>
+            <h3>Blackfish</h3>
+            <p class="aka">Tautog</p>
+            <p>Structure-loving fish found around rocks, wrecks and jetties. Green or Asian crabs are the go-to bait. Expect to lose rigs, and set the hook fast.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Spots -->
+    <section id="spots" class="alt">
+      <div class="container">
+        <h2 class="section-title">Good Spots to Try</h2>
+        <p class="section-sub">A starting list of well-known, publicly accessible places. Some state parks require a parking fee or a night-fishing permit, so check before you go.</p>
+
+        <div class="shores">
+          <div class="shore north">
+            <div class="shore-head">
+              <h3>North Shore</h3>
+              <p>Long Island Sound: calmer water, rocky bottom</p>
+            </div>
+            <ul>
+              <li><strong>Sunken Meadow State Park &amp; Nissequogue River</strong><span>River mouth and flats; stripers and blues on moving tides.</span></li>
+              <li><strong>Port Jefferson Harbor &amp; Mount Sinai Jetties</strong><span>Jetties hold blackfish and porgies; stripers at the inlet.</span></li>
+              <li><strong>Wildwood State Park</strong><span>Rocky beach with bluffs; good surf casting for stripers and blues.</span></li>
+              <li><strong>Oyster Bay &amp; Centre Island</strong><span>Protected water, porgies in summer, and easy access for small boats.</span></li>
+              <li><strong>Orient Point</strong><span>Strong currents at the tip of the North Fork, well known for stripers and blackfish.</span></li>
+            </ul>
+          </div>
+
+          <div class="shore south">
+            <div class="shore-head">
+              <h3>South Shore</h3>
+              <p>Atlantic beaches, bays and inlets</p>
+            </div>
+            <ul>
+              <li><strong>Jones Beach &amp; Jones Inlet</strong><span>Surf and jetty fishing; fluke in the inlet, stripers in fall.</span></li>
+              <li><strong>Captree State Park</strong><span>Piers and a big party-boat fleet at Fire Island Inlet. Great for beginners.</span></li>
+              <li><strong>Robert Moses State Park</strong><span>Ocean surf casting for stripers and blues during the fall run.</span></li>
+              <li><strong>Shinnecock Inlet</strong><span>Rock jetties with strong current; stripers, blues and blackfish.</span></li>
+              <li><strong>Montauk Point</strong><span>The famous rocky tip of the South Fork, with legendary fall striper and bluefish blitzes.</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tips -->
+    <section id="tips">
+      <div class="container">
+        <h2 class="section-title">Beginner Tips</h2>
+        <p class="section-sub">Keep it simple your first few trips.</p>
+
+        <ol class="tips">
+          <li><strong>Start on a party boat.</strong> Boats out of Captree, Freeport or Montauk supply rods and bait, and the mates will show you how to use them.</li>
+          <li><strong>Watch the tides.</strong> Moving water, especially the first and last hours of a tide, is usually when fish feed. Slack tide is often slow.</li>
+          <li><strong>Use a versatile setup.</strong> A 7-foot medium spinning rod with 15–20 lb line handles porgies, fluke and school stripers.</li>
+          <li><strong>Bring a ruler and pliers.</strong> Measure every fish you plan to keep, and use pliers to unhook quickly and release fish in good shape.</li>
+          <li><strong>Ask at the local tackle shop.</strong> They know what's biting right now and what bait works this week. Buy a little bait while you're there.</li>
+          <li><strong>Stay safe on the rocks.</strong> Jetties are slick. Wear shoes with good grip, never turn your back on the surf, and check the weather.</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Regulations -->
+    <section id="regs" class="alt">
+      <div class="container">
+        <h2 class="section-title">License &amp; Regulations</h2>
+        <div class="notice">
+          <p><strong>Before you fish, register.</strong> Anglers 16 and older need to enroll in New York's free <strong>Recreational Marine Fishing Registry</strong> to fish in the state's marine and coastal waters. Party-boat customers are usually covered by the boat's registration.</p>
+          <ul>
+            <li><strong>Size limits, bag limits and open seasons</strong> apply to every species on this page. They change often, sometimes mid-year.</li>
+            <li><strong>Striped bass</strong> have a "slot" limit: only fish within a set length range may be kept.</li>
+            <li><strong>Blackfish and fluke</strong> have limited open seasons; outside them, catch-and-release only.</li>
+            <li><strong>Measure correctly</strong> and release undersized fish quickly and gently.</li>
+          </ul>
+          <a class="btn" href="https://dec.ny.gov/things-to-do/saltwater-fishing" target="_blank" rel="noopener">NY DEC Saltwater Fishing Rules</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Tight lines! This page is a general guide only. Always confirm current regulations with the NY DEC.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
